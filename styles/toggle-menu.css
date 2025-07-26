@@ -1,0 +1,69 @@
+.toggle-menu {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F6F7;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.toggle-menu:hover {
+    background-color: #FFD723;
+}
+
+.menu-icon-wrapper {
+    width: 18px;
+    height: 12.6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-icon {
+    position: relative;
+    width: 18px;
+    height: 1.8px;
+    background-color: #000000;
+}
+
+.menu-icon::before {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    content: '';
+    width: 18px;
+    height: 1.8px;
+    background-color: #000000;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon::after {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    content: '';
+    width: 18px;
+    height: 1.8px;
+    background-color: #000000;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon.menu-icon-active {
+    background-color: transparent;
+}
+
+.menu-icon.menu-icon-active::before {
+    transform: rotate(45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.menu-icon.menu-icon-active::after {
+    transform: rotate(-45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
